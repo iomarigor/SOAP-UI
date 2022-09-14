@@ -1,0 +1,20 @@
+{
+    "name": "soap/service",
+    "description": "service soap",
+    "type": "project",
+    "license": "min",
+    "autoload": {
+        "psr-4": {
+            "Soap\\Service\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Iomar Igor Alegre Barrera",
+            "email": "iomarigor@gmail.com"
+        }
+    ],
+    "require": {
+        "econea/nusoap": "^0.9.12"
+    }
+}
