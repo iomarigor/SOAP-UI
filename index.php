@@ -25,8 +25,8 @@ $server->wsdl->addComplexType(
     'all',
     '',
     array(
-        'BaseCurrency' => array('name' => 'BaseCurrency', 'type' => 'xsd:string'),
         'FromCurrency' => array('name' => 'FromCurrency', 'type' => 'xsd:string'),
+        'ToCurrency' => array('name' => 'ToCurrency', 'type' => 'xsd:string'),
         'Amount' => array('name' => 'Amount', 'type' => 'xsd:decimal')
     )
 );
@@ -73,10 +73,10 @@ function guardarOrdenDeCompra($request)
 }
 function priceDollar($request)
 {
-    $BaseCurrency = $request["BaseCurrency"];
+    $ToCurrency = $request["ToCurrency"];
     $FromCurrency = $request["FromCurrency"];
     $Amount = $request["Amount"];
-    $url = "https://api.apilayer.com/exchangerates_data/convert?to=$BaseCurrency&from=$FromCurrency&amount=$Amount";
+    $url = "https://api.apilayer.com/exchangerates_data/convert?to=$ToCurrency&from=$FromCurrency&amount=$Amount";
 
     $opts = array(
         'http' => array(
@@ -96,7 +96,7 @@ function priceDollar($request)
     }
     return array(
         "status" => true,
-        "response" => $json->query->amount
+        "response" => $json->result
     );
 }
 
