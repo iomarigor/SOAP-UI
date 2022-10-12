@@ -15,9 +15,7 @@ $server->wsdl->addComplexType(
     '',
     array(
         'NumeroOrden' => array('name' => 'NumeroOrden', 'type' => 'xsd:string'),
-        'Ordenante' => array('name' => 'Ordenante', 'type' => 'xsd:string'),
-        'Moneda' => array('name' => 'Moneda', 'type' => 'xsd:string'),
-        'TipoCambio' => array('name' => 'TipoCambio', 'type' => 'xsd:decimal')
+        'Ordenante' => array('name' => 'Ordenante', 'type' => 'xsd:string')
     )
 );
 $server->wsdl->addComplexType(
