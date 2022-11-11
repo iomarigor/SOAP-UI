@@ -2,7 +2,10 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: *');
-
+//var_dump(apache_request_headers()["Authorization"]);
+if (apache_request_headers()["Authorization"] != "Bearer duidox3ssakpq48sz91a14xqwebgr6") {
+    return;
+}
 require_once "vendor/econea/nusoap/src/nusoap.php";
 $namespace = "miSoapService";
 $server = new soap_server();
