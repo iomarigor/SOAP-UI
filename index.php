@@ -1,7 +1,9 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+header('Access-Control-Allow-Headers: *');
 
 require_once "vendor/econea/nusoap/src/nusoap.php";
-
 $namespace = "miSoapService";
 $server = new soap_server();
 $server->configureWSDL("ServiceSOAP", $namespace);
